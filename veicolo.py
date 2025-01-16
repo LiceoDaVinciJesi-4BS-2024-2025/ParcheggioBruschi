@@ -98,8 +98,17 @@ class Veicolo:
     
     #----------------------------------------------------------------------
     #ordinabili alfabeticamente per marca, modello e numericamente (dal più piccolo al più grande) per cilindrata.
-    
-    
+    def __lt__(self, other):
+        if self.__marca < other.__marca:
+            return True
+        elif self.__marca == other.__marca:
+            if self.__modello < other.__modello:
+                return True
+            elif self.__modello == other.__modello:
+                if self.__cilindrata < other.__cilindrata:
+                    return True
+                
+        return False
     
     #-----------------------------------------------------------------------
     
