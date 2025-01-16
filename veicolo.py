@@ -28,23 +28,23 @@ class Veicolo:
     #definire le property--------------------------------------
     @property
     def marca(self):
-        return
+        return marca
     
     @property
     def modello():
-        return
+        return modello
         
     @property
     def colore(self):
-        return
+        return colore
     
     @property
     def cilindrata(self):
-        return
+        return cilindrata
     
     @property
     def alimentazione(self):
-        return
+        return alimentazione
         
     #definire le setter------------------------------
     @marca.setter
