@@ -8,8 +8,8 @@ listaMarcheMoto=["honda","suzuki","ktm","lambretta","harley","guzzi"]
 listaColori=["nero", "bianco", "rosso", "blu", "viola", "grigio", "giallo", "celeste"]
 listaAlimentazione=["benzina","disel","metano", "elettrico","ibrido"]
 
-lettereTarga=["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-numeriTarga=[1,2,3,4,5,6,7,8,9,0]
+lettereTarga="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+numeriTarga="123456789"
 
 #definire la classe
 class Veicolo:
@@ -19,7 +19,15 @@ class Veicolo:
         self.__colore="grigio"
         self.__cilindrata=4000
         self.__alimentazione="ibrido"
-        self.__targa= targa# devi far si che sia valida
+        
+        # devi far si che sia valida
+        listaTarga=[]
+        for x in targa:
+            listaTarga.append(x)
+        
+        for x in listaTarga:
+            if listaTarga[0] and listaTarga[1] and listaTarga[5] and listaTarga[6] in lettereTarga and listaTarga[2] and listaTarga[3] and listaTarga[4] in numeriTarga:
+                self.__targa = targa 
         
     #def  str
     def __str__(self):
@@ -45,6 +53,11 @@ class Veicolo:
     @property
     def alimentazione(self):
         return alimentazione
+    
+    #solo questa non si può cambiare
+    @property
+    def targa (self):
+        return self.__targa
         
     #definire le setter------------------------------
     @marca.setter
@@ -83,4 +96,13 @@ class Veicolo:
         self.__alimentazione=value
         return
     
+    #----------------------------------------------------------------------
+    #ordinabili alfabeticamente per marca, modello e numericamente (dal più piccolo al più grande) per cilindrata.
+    
+    
+    
     #-----------------------------------------------------------------------
+    
+if __name__=="__main__":
+    veicolo=Veicolo("AB123CD")
+    print(veicolo)
