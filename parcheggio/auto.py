@@ -3,7 +3,7 @@
 # livello 1
 
 #importare il file veicolo
-from veicolo import*
+from veicolo import Veicolo
 
 #definire la classe auto numero massimo di passeggeri e numero di passeggeri trasportati
 class Auto(Veicolo):
@@ -47,4 +47,9 @@ class Auto(Veicolo):
         return
     #-----------------------------------------------------
         
+if __name__=="__main__":
+    veicolo=Veicolo("AB123CD")
+    print (veicolo)
+    
+    print(veicolo.numeroMassimoPasseggeri())
     

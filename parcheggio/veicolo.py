@@ -2,8 +2,8 @@
 #4BS
 # classe veicolo
 
-listaMarcheAuto=["ferrari","lamborghini","maserati","audi","alfaromeo","mercedes"]
-listaMarcheMoto=["honda","suzuki","ktm","lambretta","harley","guzzi"]
+listaMarche=["ferrari","lamborghini","maserati","audi","alfaromeo","mercedes","honda","suzuki","ktm","lambretta","harley","guzzi"]
+
 
 listaColori=["nero", "bianco", "rosso", "blu", "viola", "grigio", "giallo", "celeste"]
 listaAlimentazione=["benzina","disel","metano", "elettrico","ibrido"]
@@ -31,6 +31,9 @@ class Veicolo:
         
     #def  str
     def __str__(self):
+        return self.__class__.__name__ + str(self.__dict__)
+    
+    def __repr__(self):
         return self.__class__.__name__ + str(self.__dict__)
     
     #definire le property--------------------------------------
@@ -62,7 +65,7 @@ class Veicolo:
     #definire le setter------------------------------
     @marca.setter
     def marca(self,value):
-        if value not in listaMarcheAuto or value not in listaMarcheMoto:
+        if value not in listaMarche:
             raise ValueError ("il tipo di marca non è presente nelle liste")
         self.__marca=value
         return
@@ -113,5 +116,11 @@ class Veicolo:
     #-----------------------------------------------------------------------
     
 if __name__=="__main__":
-    veicolo=Veicolo("AB123CD")
-    print(veicolo)
+    veicolo1=Veicolo("AB123CD")
+    print(veicolo1)
+    print()
+    veicolo2=Veicolo("AC342GF")
+    listaVeicolo=[veicolo1,veicolo2]
+    listaVeicolo.sort()
+    print(listaVeicolo)
+    
