@@ -48,8 +48,13 @@ class Auto(Veicolo):
     #-----------------------------------------------------
         
 if __name__=="__main__":
-    veicolo=Veicolo("AB123CD")
-    print (veicolo)
+    auto=Auto("AB123CD",5,4)
+    print (auto)
     
-    print(veicolo.numeroMassimoPasseggeri())
+    print(auto.numeroMassimoPasseggeri)
+    print(auto.passeggeriTrasportati)
     
+    auto2=Auto("ZX689SE",5,2)
+    print (auto2)
+    print(auto2.numeroMassimoPasseggeri)
+    print(auto2.passeggeriTrasportati)

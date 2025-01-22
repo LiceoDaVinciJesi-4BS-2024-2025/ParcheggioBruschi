@@ -40,14 +40,15 @@ class Moto(Veicolo):
     @passeggeriTrasportati.setter
     def passeggeriTrasportati (self, value):
         if value < 0 or value > (numeroMassimoPasseggeri-1):
-            raise ValueError ("non valido")
+            raise ValueError ("Puoi trasportare solo un passeggero")
         self.__passeggeriTrasportati=value
         return
     
     #-----------------------------------------------------
         
 if __name__=="__main__":
-    veicolo=Veicolo("AB123CD")
-    print (veicolo)
+    moto=Moto("AB123CD",2,1)
+    print (moto)
     
-    print(veicolo.numeroMassimoPasseggeri())
+    print(moto.numeroMassimoPasseggeri)
+    print(moto.passeggeriTrasportati)
