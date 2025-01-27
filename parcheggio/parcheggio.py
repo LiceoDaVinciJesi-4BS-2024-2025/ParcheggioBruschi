@@ -38,5 +38,12 @@ class Parcheggio:
                     
         if isinstance(veicolo, Moto):
             # allora è una moto...
+            for posto in self.__postiMoto:
+                if not posto.postoOccupato():
+                    posto.occupaPosto(veicolo.targa)
+                    return True
+            
+            # posti auto pieni
+            return False
         
         
