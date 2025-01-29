@@ -62,3 +62,7 @@ class Parcheggio:
 if __name__=="__main__":
     parcheggio=Parcheggio()
     print(parcheggio)
+    
+    print(parcheggio.parcheggia("Auto"))
+    print(parcheggio.parcheggia("Moto"))
+    
