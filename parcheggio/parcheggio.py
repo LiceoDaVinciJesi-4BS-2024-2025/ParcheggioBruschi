@@ -22,10 +22,16 @@ class Parcheggio:
         for n in range(MAX_MOTO):
             posto = PostoMezzo()
             self.__postiMoto.append(posto)
-            
+    
+    def __str__(self):
+        return __class__.__name__ + str(self.__dict__)
+    def __repr__(self):
+        return __class__.__name__ + str(self.__dict__)
+    
     
     def parcheggia(self, veicolo:Veicolo):
         if isinstance(veicolo, Auto):
+            
             # allora è un auto...
             for posto in self.__postiAuto:
                 if not posto.postoOccupato():
@@ -33,6 +39,8 @@ class Parcheggio:
                     return True
             
             # posti auto pieni
+            if len(self.__postiAuto)>= MAX_AUTO:
+                raise ValueError ("i posti per le macchine sono pieni")
             return False
                     
                     
@@ -43,7 +51,14 @@ class Parcheggio:
                     posto.occupaPosto(veicolo.targa)
                     return True
             
-            # posti auto pieni
+            #posti moto pieni
+            if len(self.__postiMoto)>= MAX_MOTO:
+                raise ValueError ("il parcheggio per le moto è pieno")
             return False
         
+    
         
+#-----------------------------------------------
+if __name__=="__main__":
+    parcheggio=Parcheggio()
+    print(parcheggio)
