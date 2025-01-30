@@ -78,8 +78,11 @@ if __name__=="__main__":
     mezzo1=Auto("AB123CD", 5,2)
     print("parcheggiare la macchina", parcheggio.parcheggia(mezzo1))
     
-    mezzo2=Moto("PO567RF",2,1)
-    print("parcheggiare la moto",parcheggio.parcheggia(mezzo2))
+    mezzo2=Auto("SE308AM", 3,1)
+    print("parcheggiare la macchina", parcheggio.parcheggia(mezzo2))
+    
+    mezzo3=Moto("PO567RF",2,1)
+    print("parcheggiare la moto",parcheggio.parcheggia(mezzo3))
     
     print(parcheggio)
     
