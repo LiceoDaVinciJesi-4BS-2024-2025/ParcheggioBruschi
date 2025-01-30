@@ -47,7 +47,7 @@ class PostoMezzo:
         
     # funzione libera posto
      def liberaPosto(self):
-        self.__targa==""
+        self.__targa = ""
         
      def occupaPosto(self,targaNuova:str):
          if self.__targa == targaNuova:

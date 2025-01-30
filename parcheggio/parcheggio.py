@@ -62,16 +62,13 @@ class Parcheggio:
             if parcheggio.targa == targa:
                 parcheggio.liberaPosto()
                 break
-        return False
+            return False
             
         for parcheggio in self.__postiMoto:
             if parcheggio.targa == targa:
                 parcheggio.liberaPosto()
                 break
-            
-        return False
-        
-    
+            return False
         
 #-----------------------------------------------
 if __name__=="__main__":
@@ -87,6 +84,10 @@ if __name__=="__main__":
     print(parcheggio)
     
     print(parcheggio.liberaParcheggio(mezzo1.targa))
+    
+    print(parcheggio)
+    
+    print(parcheggio.liberaParcheggio(mezzo2.targa))
     
     print(parcheggio)
     
