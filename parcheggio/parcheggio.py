@@ -32,28 +32,31 @@ class Parcheggio:
     def parcheggia(self, veicolo:Veicolo):
         if isinstance(veicolo, Auto):
             
+            # posti auto pieni
+            if len(self.__postiAuto)>= MAX_AUTO:
+                raise ValueError ("i posti per le macchine sono pieni")
+            
             # allora è un auto...
             for posto in self.__postiAuto:
                 if not posto.postoOccupato():
                     posto.occupaPosto(veicolo.targa)
                     return True
-            
-            # posti auto pieni
-            if len(self.__postiAuto)>= MAX_AUTO:
-                raise ValueError ("i posti per le macchine sono pieni")
+             
             return False
                     
                     
         if isinstance(veicolo, Moto):
+            
+            #posti moto pieni
+            if len(self.__postiMoto)>= MAX_MOTO:
+                raise ValueError ("il parcheggio per le moto è pieno")
+            
             # allora è una moto...
             for posto in self.__postiMoto:
                 if not posto.postoOccupato():
                     posto.occupaPosto(veicolo.targa)
                     return True
             
-            #posti moto pieni
-            if len(self.__postiMoto)>= MAX_MOTO:
-                raise ValueError ("il parcheggio per le moto è pieno")
             return False
         
     def liberaParcheggio (self, targa:str):

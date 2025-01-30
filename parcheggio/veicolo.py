@@ -19,12 +19,7 @@ class Veicolo:
         self.__colore="grigio"
         self.__cilindrata=4000
         self.__alimentazione="ibrido"
-        
-        # devi far si che sia valida
-#         listaTarga=[]
-#         for x in targa:
-#             listaTarga.append(x)
-#             
+                     
         if len(targa) != 7:
             raise ValueError ("la targa deve essere di sette caratteri")
         
@@ -32,6 +27,11 @@ class Veicolo:
                 self.__targa = targa
         else:
             raise ValueError("Targa errata")
+        
+        for x in targa:
+            if targa[0] in lettereTarga and targa[1] in lettereTarga and targa[5] in lettereTarga and targa[6] in lista in targa and targa[2] and targa[3] and targa[4] in numeriTarga:
+                self.__targa = targa 
+
         
     #def  str
     def __str__(self):
