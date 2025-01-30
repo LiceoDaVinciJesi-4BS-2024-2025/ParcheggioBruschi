@@ -28,9 +28,10 @@ class Veicolo:
         if len(targa) != 7:
             raise ValueError ("la targa deve essere di sette caratteri")
         
-        for x in targa:
-            if targa[0] and targa[1] and targa[5] and targa[6] in targa and targa[2] and targa[3] and targa[4] in numeriTarga:
-                self.__targa = targa 
+        if targa[0] in lettereTarga and targa[1] in lettereTarga and targa[5] in lettereTarga and targa[6] in lettereTarga and targa[2] in numeriTarga and targa[3] in numeriTarga and targa[4] in numeriTarga:
+                self.__targa = targa
+        else:
+            raise ValueError("Targa errata")
         
     #def  str
     def __str__(self):
