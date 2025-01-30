@@ -62,7 +62,13 @@ class Parcheggio:
 if __name__=="__main__":
     parcheggio=Parcheggio()
     print(parcheggio)
+
+
+    mezzo1=Auto("AB123CD", 5,2)
+    print("parcheggiare la macchina", parcheggio.parcheggia(mezzo1))
     
-    print(parcheggio.parcheggia("Auto"))
-    print(parcheggio.parcheggia("Moto"))
+    mezzo2=Moto("PO567RF",2,1)
+    print("parcheggiare la moto",parcheggio.parcheggia(mezzo2))
+    
+
     

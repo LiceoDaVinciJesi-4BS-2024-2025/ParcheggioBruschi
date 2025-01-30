@@ -21,15 +21,15 @@ class Veicolo:
         self.__alimentazione="ibrido"
         
         # devi far si che sia valida
-        listaTarga=[]
-        for x in targa:
-            listaTarga.append(x)
-            
-        if len(listaTarga) != 7:
+#         listaTarga=[]
+#         for x in targa:
+#             listaTarga.append(x)
+#             
+        if len(targa) != 7:
             raise ValueError ("la targa deve essere di sette caratteri")
         
-        for x in listaTarga:
-            if listaTarga[0] and listaTarga[1] and listaTarga[5] and listaTarga[6] in lettereTarga and listaTarga[2] and listaTarga[3] and listaTarga[4] in numeriTarga:
+        for x in targa:
+            if targa[0] and targa[1] and targa[5] and targa[6] in targa and targa[2] and targa[3] and targa[4] in numeriTarga:
                 self.__targa = targa 
         
     #def  str
