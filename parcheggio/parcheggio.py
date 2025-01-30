@@ -56,6 +56,21 @@ class Parcheggio:
                 raise ValueError ("il parcheggio per le moto è pieno")
             return False
         
+    def liberaParcheggio (self, targa:str):
+        
+        for parcheggio in self.__postiAuto:
+            if parcheggio.targa == targa:
+                parcheggio.liberaPosto()
+                break
+        return False
+            
+        for parcheggio in self.__postiMoto:
+            if parcheggio.targa == targa:
+                parcheggio.liberaPosto()
+                break
+            
+        return False
+        
     
         
 #-----------------------------------------------
@@ -63,12 +78,15 @@ if __name__=="__main__":
     parcheggio=Parcheggio()
     print(parcheggio)
 
-
     mezzo1=Auto("AB123CD", 5,2)
     print("parcheggiare la macchina", parcheggio.parcheggia(mezzo1))
     
     mezzo2=Moto("PO567RF",2,1)
     print("parcheggiare la moto",parcheggio.parcheggia(mezzo2))
     
-
+    print(parcheggio)
+    
+    print(parcheggio.liberaParcheggio(mezzo1.targa))
+    
+    print(parcheggio)
     
